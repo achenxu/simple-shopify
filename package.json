@@ -1,0 +1,17 @@
+{
+  "name": "simple-shopify",
+  "version": "0.1.0",
+  "description": "A simple shopify monitor.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt C. (Luqy)",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "path": "^0.12.7",
+    "request": "^2.83.0",
+    "webhook-discord": "^2.0.6"
+  }
+}
