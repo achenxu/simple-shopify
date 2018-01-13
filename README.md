@@ -7,7 +7,7 @@ Any further help or assistance feel free to message me on discord (NotWashedLuqy
 
 ### Setup (for development)
 
-easy-proxy requires [Node.js](http://nodejs.org/).
+simple-shopify requires [Node.js](http://nodejs.org/).
 
 Development Setup:
 
