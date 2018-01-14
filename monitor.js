@@ -100,7 +100,7 @@ try {
                     // console.log("DEBUH - " + getHostName(urllink))
                     // console.log("DEBUG - " + soldoutMap.get(getHostName(urllink)))
                     if(soldoutMap.get(getHostName(urllink)) === "0") {
-                        Hook.custom("Stock Monitor", urllink + " is in stock \nPRICE: " + price, "Product in stock", "#00ff00");
+                        Hook.custom("Stock Monitor", urllink + " is in stock \nPRICE: " + price + " " + config.webhook.aftermsg, "Product in stock", "#00ff00");
                         soldoutMap.set(getHostName(urllink), "1")
                     }
                      

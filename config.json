@@ -1,14 +1,11 @@
 {
 
-  "interval": 3000,
-<<<<<<< HEAD
-  "url": ["https://cactusmilk.myshopify.com/cart/6519014359070:1", "another url (example)"],
-=======
-  "url": ["https://cactusmilk.myshopify.com/cart/6519014359070:1", "another link", "another link"],
->>>>>>> origin/master
-  "useproxy": true,
+  "interval": 5000,
+  "url": ["https://cactusmilk.myshopify.com/cart/6305890172958:1"],
+  "useproxy": true, 
   "webhook": {
-    "url": "ur discord webhook"
+    "url": "https://discordapp.com/api/webhooks/402163829141667840/x0a91_D3IcYbKoYN3GWNHvlk8ryrRvD1Uz-FyZqQNJKMkomTcKOuZqMl71JlBEuftZNs",
+    "aftermsg": "@everyone"
   }
 
 }
