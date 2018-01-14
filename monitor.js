@@ -50,7 +50,7 @@ try {
     function pickRandomProxy() {
         if(config.useproxy) {
             var rand = Math.floor(Math.random() * formattedProxies.length) + 0;
-            console.log("[INFO] Using proxy " + formattedProxies[rand])
+           // console.log("[INFO] Using proxy " + formattedProxies[rand])
             return formattedProxies[rand];
         } else {
             return ""
@@ -58,7 +58,8 @@ try {
     }
     
     
-    function monitor(urllink) {
+     function monitor(urllink) {
+        var proxyUsed = pickRandomProxy();
         request({
             url: urllink,
             headers: {
@@ -68,7 +69,7 @@ try {
                 "Upgrade-Insecure-Requests": "1",
                 "Cache-Control": "max-age=0",
             },
-            proxy: pickRandomProxy(),
+            proxy: proxyUsed,
             jar: cookiejar
         }, function(error, response, body) {
                     if (!error && response.statusCode == 200) {
@@ -81,13 +82,13 @@ try {
                 var $ = cheerio.load(body);
                 if ($("table.stock-problems-table > tbody > tr > td:nth-child(3)").text().trim() == "Sold out") {
                     
-                    console.log("[INFO] Monitored website. " + getHostName(urllink) + " is out of stock at " + time)
+                    console.log("[INFO] Monitored website. " + getHostName(urllink) + " is out of stock at " + time + " Using proxy " + proxyUsed)
                 
                     //soldout = false;
                     soldoutMap.set(getHostName(urllink), "0")
                 } else if ($("button.step__footer__continue-btn btn > span").text().trim() == "Continue to payment method" || "Continue to shipping method") {
                     
-                    console.log("[INFO] Monitored website. " + getHostName(urllink) + " is in stock. at " + time )
+                    console.log("[INFO] Monitored website. " + getHostName(urllink) + " is in stock. at " + time + " Using proxy " + proxyUsed)
                     
                     var price = $("table.product-table > tbody > tr > td.product__price > span.order-summary__emphasis").text().trim()
                     // console.log("DEBUH - " + getHostName(urllink))

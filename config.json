@@ -1,9 +1,9 @@
 {
-  "interval": 3000,
-  "url": ["https://cactusmilk.myshopify.com/cart/6519014359070:1"],
+  "interval": 5000, 
+  "url": ["https://cactusmilk.myshopify.com/cart/6519014359070:1", "more links etc.."],
   "useproxy": true,
   "webhook": {
-    "url": "your url here"
+    "url": "discord webhook"
   }
 
 }
