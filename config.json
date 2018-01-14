@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
   "interval": 5000, 
   "url": ["https://cactusmilk.myshopify.com/cart/6519014359070:1", "more links etc.."],
+=======
+  "interval": 3000,
+  "url": ["https://cactusmilk.myshopify.com/cart/6519014359070:1", "another link", "another link"],
+>>>>>>> origin/master
   "useproxy": true,
   "webhook": {
     "url": "discord webhook"
