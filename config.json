@@ -1,6 +1,7 @@
 {
-  "interval": 5000,
-  "url": ["https://aiomacbot.myshopify.com/cart/38188288335:1", "https://purchase.splashforce.io/cart/6488844140583:1", "https://cactusmilk.myshopify.com/cart/6519014359070:1"],
+  "interval": 3000,
+  "url": ["https://cactusmilk.myshopify.com/cart/6519014359070:1"],
+  "useproxy": true,
   "webhook": {
     "url": "your url here"
   }
