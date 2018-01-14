@@ -21,7 +21,7 @@ try {
     	
     	} else {
     	
-    	var textByLine = text.split("\n\r")
+    	var textByLine = text.split("\r\n")
     }
     
     
