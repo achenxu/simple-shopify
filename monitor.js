@@ -82,14 +82,20 @@ try {
                 var $ = cheerio.load(body);
                 if ($("table.stock-problems-table > tbody > tr > td:nth-child(3)").text().trim() == "Sold out") {
                     
-                    console.log("[INFO] Monitored website. " + getHostName(urllink) + " is out of stock at " + time + " Using proxy " + proxyUsed)
-                
+                    if(proxyUsed != "") {
+                    console.log("[INFO] Monitored website. " + getHostName(urllink) + " is out of stock at " + time + " using proxy " + proxyUsed)
+                    } else {
+                        console.log("[INFO] Monitored website. " + getHostName(urllink) + " is out of stock at " + time)
+                    }
                     //soldout = false;
                     soldoutMap.set(getHostName(urllink), "0")
                 } else if ($("button.step__footer__continue-btn btn > span").text().trim() == "Continue to payment method" || "Continue to shipping method") {
                     
-                    console.log("[INFO] Monitored website. " + getHostName(urllink) + " is in stock. at " + time + " Using proxy " + proxyUsed)
-                    
+                    if(proxyUsed != "") {
+                        console.log("[INFO] Monitored website. " + getHostName(urllink) + " is in stock at " + time + " using proxy " + proxyUsed)
+                    } else {
+                        console.log("[INFO] Monitored website. " + getHostName(urllink) + " is in stock at " + time)
+                    }
                     var price = $("table.product-table > tbody > tr > td.product__price > span.order-summary__emphasis").text().trim()
                     // console.log("DEBUH - " + getHostName(urllink))
                     // console.log("DEBUG - " + soldoutMap.get(getHostName(urllink)))
