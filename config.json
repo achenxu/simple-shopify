@@ -6,6 +6,8 @@
 
   "useproxy": true,
 
+  "runningonmac": true,
+
   "webhook": {
     "url": "https://discordapp.com/api/webhooks/402163829141667840/x0a91_D3IcYbKoYN3GWNHvlk8ryrRvD1Uz-FyZqQNJKMkomTcKOuZqMl71JlBEuftZNs",
     "aftermsg": "@everyone"

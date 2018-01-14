@@ -14,8 +14,17 @@ try {
     var cookiejar = request.jar();
     var soldoutMap = new Map()
     var text = fs.readFileSync("./proxies.txt", "utf-8");
-
-    var textByLine = text.split("\n")
+	
+	if(config.runningonmac) {
+	
+    	var textByLine = text.split("\n")
+    	
+    	} else {
+    	
+    	var textByLine = text.split("\n\r")
+    }
+    
+    
     var formattedProxies = new Array();
 
 
@@ -28,6 +37,7 @@ try {
         }
         
     }
+    console.log(formattedProxies)
     console.log(" --- SIMPLE PROXY MADE BY LUQY / MATT C. @isn_name --- ")
 
     for(i = 0; i < urls.length; i++) {
@@ -82,20 +92,14 @@ try {
                 var $ = cheerio.load(body);
                 if ($("table.stock-problems-table > tbody > tr > td:nth-child(3)").text().trim() == "Sold out") {
                     
-                    if(proxyUsed != "") {
-                    console.log("[INFO] Monitored website. " + getHostName(urllink) + " is out of stock at " + time + " using proxy " + proxyUsed)
-                    } else {
-                        console.log("[INFO] Monitored website. " + getHostName(urllink) + " is out of stock at " + time)
-                    }
+                    console.log("[INFO] Monitored website. " + getHostName(urllink) + " is out of stock at " + time + " Using proxy " + proxyUsed)
+                
                     //soldout = false;
                     soldoutMap.set(getHostName(urllink), "0")
                 } else if ($("button.step__footer__continue-btn btn > span").text().trim() == "Continue to payment method" || "Continue to shipping method") {
                     
-                    if(proxyUsed != "") {
-                        console.log("[INFO] Monitored website. " + getHostName(urllink) + " is in stock at " + time + " using proxy " + proxyUsed)
-                    } else {
-                        console.log("[INFO] Monitored website. " + getHostName(urllink) + " is in stock at " + time)
-                    }
+                    console.log("[INFO] Monitored website. " + getHostName(urllink) + " is in stock. at " + time + " Using proxy " + proxyUsed)
+                    
                     var price = $("table.product-table > tbody > tr > td.product__price > span.order-summary__emphasis").text().trim()
                     // console.log("DEBUH - " + getHostName(urllink))
                     // console.log("DEBUG - " + soldoutMap.get(getHostName(urllink)))
