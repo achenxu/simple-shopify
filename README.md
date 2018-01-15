@@ -8,7 +8,7 @@ Any further help or assistance feel free to message me on discord (NotWashedLuqy
 ### Setup (for development)
 
 simple-shopify requires [Node.js](http://nodejs.org/).
-YT Vid: https://twitter.com/theyeezymafia/status/952650541452185600
+Video tutorial: https://youtu.be/11bJSBb1lfc
 Development Setup:
 
 ```sh
